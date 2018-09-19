@@ -1,0 +1,17 @@
+#include <iostream>
+
+
+float calculateSpeed(float t){
+float v;
+v = (0.00001*t*t*t)-(0.00488*t*t)+(0.75795*t)+181.3566;
+return v;
+
+}
+int main() {
+  float t,v;
+  printf("Please give the time in seconds after the plane's acceleration: ");
+  scanf("%f",&t);
+v = calculateSpeed(t);
+printf("The velocity of the plane at time %f seconds is %f m/2",t,v);
+return 0;
+}
