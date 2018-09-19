@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+float calculateResistance(float wireLength, float resistancePerLength, float alpha, float temperature){
+float resistance,referanceResistance;
+referanceResistance = wireLength * resistancePerLength;
+resistance = referanceResistance*(1.f + alpha*(temperature - 20.f));
+  return resistance;
+}
+
+int main(){
+  float temperature, referanceResistance, alpha, wireLength,resistancePerLength,resistance;
+  printf("please input the temperature of the wire: ");
+  scanf("%f",&temperature);
+  printf("\nplease input the length of the wire: ");
+  scanf("%f",&wireLength);
+  printf("\nplease input the resistance per length in ohms/meter: ");
+  scanf("%f",&resistancePerLength);
+  printf("\nplease input the resistance temperature coefficient: ");
+  scanf("%f", &alpha);
+  resistance = calculateResistance(wireLength,resistancePerLength, alpha, temperature);
+printf("%f %f %f %f ",temperature,wireLength,resistancePerLength,alpha);
+  printf("\nThe resistance of the wire is: %f",resistance);
+return 0;
+}
