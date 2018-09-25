@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+float totalWeight(int numWasher, float density, float thickness, float externalDiameter, float holeDiameter){
+  float weight;
+  
+  weight = pow(externalDiameter,2) - pow(holeDiameter,2);
+  weight = numWasher * thickness * density * M_PI * weight;
+  weight = weight/4;
+return weight;
+}
+
+
+int main() {
+int numWashers;
+float washerDensity, washerThickness, externalDiameter, holeDiameter, weight;
+printf("How many washers are there?:");
+scanf("%d",&numWashers);
+printf("What is the density of the material in kg/cm^3 ?: ");
+scanf("%f",&washerDensity);
+printf("How thick is each washer in cm?: ");
+scanf("%f",&washerThickness);
+printf("What is the external diameter of the washers in cm?: ");
+scanf("%f",&externalDiameter);
+printf("What is the diameter of the hole in cm");
+scanf("%f",&holeDiameter);
+weight = totalWeight( numWashers,  washerDensity,  washerThickness,  externalDiameter,  holeDiameter);
+printf("The weight of your washers is %fKG",weight);
+  return 0;
+}
